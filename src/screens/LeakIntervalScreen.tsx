@@ -4,25 +4,20 @@ export function LeakIntervalScreen() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // FIX: SetInterval giờ đã có hàm cleanup được gọi khi unmount
-    const timer = setInterval(() => {
+    // Memory Leak: Không có hàm cleanup (clearInterval) được trả về
+    setInterval(() => {
       setCount(c => c + 1);
-      console.log('LeakIntervalScreen: Interval đang chạy ngầm...');
+      console.log('LeakIntervalScreen: Interval vẫn đang chạy ngầm... (Leak)');
     }, 1000);
-
-    return () => {
-      clearInterval(timer);
-      console.log('LeakIntervalScreen: Đã xóa Interval (FIXED)');
-    };
   }, []);
 
   return (
     <div>
-      <h2>Đã Fix (Leak 1): Quản lý Interval</h2>
+      <h2>Leak 1: Quên xóa Interval</h2>
       <p>Count: {count}</p>
       <p>
-        Interval này đã được thêm logic dọn dẹp. Ngay khi bạn chuyển sang màn hình khác,
-        Interval sẽ bị huỷ bỏ để tránh lặp vô tận và rò rỉ bộ nhớ.
+        Interval này sẽ tiếp tục chạy và cập nhật state ngầm ngay cả khi bạn đã chuyển sang màn hình
+        khác. Mở tab Console để xem!
       </p>
     </div>
   );
