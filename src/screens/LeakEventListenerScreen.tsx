@@ -6,27 +6,22 @@ export function LeakEventListenerScreen() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setCoords({ x: e.clientX, y: e.clientY });
-      console.log('LeakEventListenerScreen: Đang tracking chuột...');
+      console.log('LeakEventListenerScreen: Đang tracking chuột... (Leak)');
     };
 
-    // FIX: Thêm event listener vào window và gỡ ra khi unmount
+    // Memory Leak: Event listener được thêm vào window nhưng không bao giờ xóa đi
     window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      console.log('LeakEventListenerScreen: Đã xoá bỏ tracking chuột (FIXED)');
-    };
   }, []);
 
   return (
     <div>
-      <h2>Đã Fix (Leak 2): Quản lý Event Listener</h2>
+      <h2>Leak 2: Quên xóa Event Listener</h2>
       <p>
         Tọa độ chuột X: {coords.x}, Y: {coords.y}
       </p>
       <p>
-        Event listener đã được gán vào object "window" nhưng sẽ được dọn dẹp (removeEventListener) ngay 
-        khi bạn rời khỏi màn hình này, giúp giải phóng bộ nhớ và tránh xử lý thừa thãi.
+        Event listener được gắn vào object "window" toàn cục và không bị xóa khi unmount. Di chuột
+        qua lại và xem Console sau khi rời khỏi màn hình này.
       </p>
     </div>
   );
