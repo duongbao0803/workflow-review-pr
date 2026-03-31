@@ -4,6 +4,7 @@ import { NormalScreen } from './screens/NormalScreen';
 import { LeakIntervalScreen } from './screens/LeakIntervalScreen';
 import { LeakEventListenerScreen } from './screens/LeakEventListenerScreen';
 import { LeakGlobalArrayScreen } from './screens/LeakGlobalArrayScreen';
+import ViolatePatternScreen from './ViolatePatternScreen';
 import './App.css';
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         return <LeakEventListenerScreen />;
       case 'leak-global':
         return <LeakGlobalArrayScreen />;
+      case 'violate-pattern':
+        return <ViolatePatternScreen />;
       case 'home':
       default:
         return <HomeScreen />;
@@ -60,6 +63,12 @@ function App() {
           onClick={() => setActiveScreen('leak-global')}
         >
           ⚠️ Leak: Global Array{' '}
+        </button>
+        <button
+          style={{ backgroundColor: '#ff9800', color: 'black', fontWeight: 'bold' }}
+          onClick={() => setActiveScreen('violate-pattern')}
+        >
+          ❌ Sai Pattern
         </button>
       </nav>
 
