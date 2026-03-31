@@ -7,9 +7,9 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
 
-  // useEffect(() => {
-  //   setCount(count + 1);
-  // }, [count]);
+  useEffect(() => {
+    setCount(count + 1);
+  }, [count]);
 
   return (
     <>
