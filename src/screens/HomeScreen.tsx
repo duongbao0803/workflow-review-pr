@@ -8,22 +8,19 @@ export function HomeScreen() {
   return (
     <section id='center'>
       <div className='hero'>
-        {/* LỖI 1: Thiếu thuộc tính alt quan trọng cho accessibility */}
-        <img src={heroImg} className='base' width='170' height='179' />
+        <img src={heroImg} className='base' width='170' height='179' alt='Hero' />
         <img src={reactLogo} className='framework' alt='React logo' />
         <img src={viteLogo} className='vite' alt='Vite logo' />
       </div>
       
-      {/* LỖI 2: Dùng `tabindex` thay vì `tabIndex` trong React JSX */}
-      <div tabindex="0">
+      <div tabIndex={0}>
         <h1>Vite + React Memory Leaks</h1>
-        <p>Chọn các nút phía trên để thử nghiệm các trường hợp lỗi.</p>
+        <p>Chọn các nút phía trên để thử nghiệm các trường hợp rò rỉ bộ nhớ (Memory Leak).</p>
         
         <h3 style={{ marginTop: '30px' }}>Các vấn đề hiện tại:</h3>
         <ul>
-          {/* LỖI 3: Render array thành list DOM elements nhưng thiếu prop `key` */}
-          {features.map((feature) => (
-            <li>{feature}</li>
+          {features.map((feature, index) => (
+            <li key={index}>{feature}</li>
           ))}
         </ul>
       </div>
