@@ -10,13 +10,6 @@ export function LeakGlobalArrayScreen() {
         `LeakGlobalArrayScreen: Đã thêm dữ liệu rác. Kích thước mảng: ${leakedArray.length}`,
       );
     }, 500);
-
-    return () => {
-      clearInterval(timer);
-      // Fix: Dọn dẹp mảng global khi unmount để tránh rò rỉ bộ nhớ
-      leakedArray.splice(0, leakedArray.length);
-      console.log('LeakGlobalArrayScreen: Đã dọn dẹp mảng global khi unmount.');
-    };
   }, []);
 
   return (
