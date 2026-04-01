@@ -2,6 +2,12 @@
 
 This document defines the standard architectural pattern for the AI-Agent-PR frontend application, which is built on React + Vite + TypeScript.
 
+## Mandatory Usage
+
+- Read this document before implementation tasks.
+- Read this document before PR review tasks (together with `docs/PR_REVIEW.md`).
+- Do not guess conventions when reviewing or editing code.
+
 ## 1. Directory Structure
 
 A clean, feature-and-screen-based architecture ensures scalability and code maintainability.

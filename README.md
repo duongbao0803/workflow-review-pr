@@ -1,5 +1,11 @@
 # React + TypeScript + Vite
 
+## AI Workflow Rules
+
+- PR review requests: read `docs/PR_REVIEW.md` and `docs/PATTERN.md` first.
+- Implementation requests: read `docs/PATTERN.md` first.
+- In Cursor, also read `.cursor/rules/*.mdc` before substantial work.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

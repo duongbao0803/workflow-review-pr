@@ -14,6 +14,11 @@ Each AI-powered IDE has its own dedicated rules folder. You MUST go to the folde
 
 > **IMPORTANT:** If your IDE is not listed above, go to `.agents/rules/` and read the rule files there. That is the universal fallback.
 
+### Cursor Enforcement (Critical)
+
+When working in Cursor, read `.cursor/rules/*.mdc` before doing any substantial task.
+For any PR review request, you must read `docs/PR_REVIEW.md` and `docs/PATTERN.md` first, and during review you must validate each changed file against `docs/PATTERN.md` before running the final `gh pr review` command.
+
 ---
 
 ## Rules for Antigravity / Gemini (inline)

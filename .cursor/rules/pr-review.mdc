@@ -1,13 +1,14 @@
 ---
-description: PR Review Tasks workflow. Triggers when user asks to review PR, PR #N, review pull request, or check PR.
+description: Mandatory PR review workflow for Cursor (read docs before any gh command).
 globs: *
+alwaysApply: true
 ---
 
 # PR Review Tasks
 
 ## Mandatory First Step
 
-Before performing ANY task, you MUST read the mandatory documentation. Do NOT skip this step. Do not guess conventions.
+Before performing ANY PR review task, you MUST read the mandatory documentation first. Do NOT skip this step. Do not guess conventions.
 
 **MUST READ:**
 
@@ -16,4 +17,17 @@ Before performing ANY task, you MUST read the mandatory documentation. Do NOT sk
 
 ## Workflow
 
-Gather PR info, analyze changes against architecture pattern rules, draft comments, approve/request changes via `gh` CLI as documented in `docs/PR_REVIEW.md`.
+1. Read `docs/PR_REVIEW.md` and `docs/PATTERN.md`.
+2. Gather PR metadata + diff using `gh` CLI.
+3. Analyze each changed file against `docs/PATTERN.md` as a required checklist (not optional).
+4. Draft concise findings with severity and actionable fixes.
+5. Approve or request changes via `gh` CLI exactly as documented in `docs/PR_REVIEW.md`.
+
+## Trigger Keywords
+
+- review PR
+- PR #N
+- review pull request
+- check PR
+- review this PR
+- giúp review PR
