@@ -4,11 +4,13 @@ export function LeakIntervalScreen() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Memory Leak: Không có hàm cleanup (clearInterval) được trả về
-    setInterval(() => {
+    // Fix: Lưu intervalId và trả về cleanup function để clearInterval khi unmount
+    const intervalId = setInterval(() => {
       setCount(c => c + 1);
-      console.log('LeakIntervalScreen: Interval vẫn đang chạy ngầm... (Leak)');
+      console.log('LeakIntervalScreen: Interval đang chạy (đã được fix).');
     }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

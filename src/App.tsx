@@ -4,6 +4,8 @@ import { NormalScreen } from './screens/NormalScreen';
 import { LeakIntervalScreen } from './screens/LeakIntervalScreen';
 import { LeakEventListenerScreen } from './screens/LeakEventListenerScreen';
 import { LeakGlobalArrayScreen } from './screens/LeakGlobalArrayScreen';
+import { LeakDOMScreen } from './screens/LeakDOMScreen';
+import { LeakObserverScreen } from './screens/LeakObserverScreen';
 import ViolatePatternScreen from './ViolatePatternScreen';
 import './App.css';
 
@@ -20,6 +22,10 @@ function App() {
         return <LeakEventListenerScreen />;
       case 'leak-global':
         return <LeakGlobalArrayScreen />;
+      case 'leak-dom':
+        return <LeakDOMScreen />;
+      case 'leak-observer':
+        return <LeakObserverScreen />;
       case 'violate-pattern':
         return <ViolatePatternScreen />;
       case 'home':
@@ -63,6 +69,18 @@ function App() {
           onClick={() => setActiveScreen('leak-global')}
         >
           ⚠️ Leak: Global Array{' '}
+        </button>
+        <button
+          style={{ backgroundColor: '#dc3545' }}
+          onClick={() => setActiveScreen('leak-dom')}
+        >
+          ⚠️ Leak: Detached DOM
+        </button>
+        <button
+          style={{ backgroundColor: '#dc3545' }}
+          onClick={() => setActiveScreen('leak-observer')}
+        >
+          ⚠️ Leak: Observer API
         </button>
         <button
           style={{ backgroundColor: '#ff9800', color: 'black', fontWeight: 'bold' }}

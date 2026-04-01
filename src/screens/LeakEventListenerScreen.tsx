@@ -9,8 +9,10 @@ export function LeakEventListenerScreen() {
       console.log('LeakEventListenerScreen: Đang tracking chuột... (Leak)');
     };
 
-    // Memory Leak: Event listener được thêm vào window nhưng không bao giờ xóa đi
+    // Fix: Thêm event listener và trả về cleanup để xóa khi unmount
     window.addEventListener('mousemove', handleMouseMove);
+
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
