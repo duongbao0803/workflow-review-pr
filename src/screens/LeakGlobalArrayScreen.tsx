@@ -11,7 +11,12 @@ export function LeakGlobalArrayScreen() {
       );
     }, 500);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      // Fix: Dọn dẹp mảng global khi unmount để tránh rò rỉ bộ nhớ
+      leakedArray.splice(0, leakedArray.length);
+      console.log('LeakGlobalArrayScreen: Đã dọn dẹp mảng global khi unmount.');
+    };
   }, []);
 
   return (

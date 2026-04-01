@@ -21,7 +21,9 @@ export function LeakDOMScreen() {
 
     return () => {
       clearInterval(interval);
-      // CỐ TÌNH LEAK: Không dọn dẹp mảng detachedNodes khi unmount
+      // Fix: Xóa tất cả tham chiếu trong mảng để GC có thể dọn dẹp các DOM node
+      detachedNodes.splice(0, detachedNodes.length);
+      console.log('LeakDOMScreen: Đã giải phóng tất cả detached DOM nodes.');
     };
   }, []);
 

@@ -15,7 +15,8 @@ export function LeakObserverScreen() {
       observer.observe(elementRef.current);
     }
 
-    // CỐ TÌNH LEAK: Không return () => observer.disconnect();
+    // Fix: Disconnect observer khi unmount để giải phóng bộ nhớ
+    return () => observer.disconnect();
   }, []);
 
   return (
