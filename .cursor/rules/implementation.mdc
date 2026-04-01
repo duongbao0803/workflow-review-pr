@@ -1,13 +1,14 @@
 ---
 description: Implementation Tasks workflow. Triggers when user asks to implement, build, create, add feature, code, or refactor.
 globs: *
+alwaysApply: true
 ---
 # Implementation Tasks
 
 ## Mandatory First Step
 Before performing ANY task, you MUST read the mandatory documentation. Do NOT skip this step. Do not guess conventions.
 
-**MUST READ:** 
+**MUST READ:**
 - `docs/PATTERN.md`
 
 ## Workflow

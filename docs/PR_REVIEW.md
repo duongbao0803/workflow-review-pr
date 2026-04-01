@@ -1,5 +1,14 @@
 You have access to the `gh` terminal command. I already authenticated it for you. Please review it to use the PR that I asked you to review. You're already in the repo.
 
+## Mandatory Prerequisites (All Agents)
+
+Before and during PR review:
+
+1. Read `docs/PATTERN.md`.
+2. Read your IDE-specific rule file (for Cursor: `.cursor/rules/*.mdc`).
+3. During analysis, use `docs/PATTERN.md` as a required checklist for each changed file.
+4. Then execute the PR review workflow below.
+
 <detailed_sequence_of_steps>
 
 # GitHub PR Review Process - Detailed Sequence of Steps

@@ -4,10 +4,9 @@
 
 Before performing ANY task in this repository, you MUST:
 
-1. Read the rule index at `docs/RULES_INDEX.md`
-2. Identify which task type matches the user's request
-3. Read the corresponding rule file linked in the index
-4. Follow the instructions in that rule file
+1. Identify which task type matches the user's request
+2. Read the corresponding mandatory docs below
+3. Follow the instructions in those docs before writing code or running review commands
 
 ## Quick Reference
 

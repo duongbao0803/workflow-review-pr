@@ -7,6 +7,7 @@ import { LeakGlobalArrayScreen } from './screens/LeakGlobalArrayScreen';
 import { LeakDOMScreen } from './screens/LeakDOMScreen';
 import { LeakObserverScreen } from './screens/LeakObserverScreen';
 import ViolatePatternScreen from './ViolatePatternScreen';
+import UserProfileScreen from './UserProfileScreen';
 import './App.css';
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         return <LeakObserverScreen />;
       case 'violate-pattern':
         return <ViolatePatternScreen />;
+      case 'user-profile':
+        return <UserProfileScreen />;
       case 'home':
       default:
         return <HomeScreen />;
@@ -87,6 +90,12 @@ function App() {
           onClick={() => setActiveScreen('violate-pattern')}
         >
           ❌ Sai Pattern
+        </button>
+        <button
+          style={{ backgroundColor: '#ff9800', color: 'black', fontWeight: 'bold' }}
+          onClick={() => setActiveScreen('user-profile')}
+        >
+          ❌ Sai Pattern 2 (User Profile)
         </button>
       </nav>
 
