@@ -1,0 +1,19 @@
+---
+description: PR Review Tasks workflow. Triggers when user asks to review PR, PR #N, review pull request, or check PR.
+globs: *
+---
+
+# PR Review Tasks
+
+## Mandatory First Step
+
+Before performing ANY task, you MUST read the mandatory documentation. Do NOT skip this step. Do not guess conventions.
+
+**MUST READ:**
+
+- `docs/PR_REVIEW.md`
+- `docs/PATTERN.md`
+
+## Workflow
+
+Gather PR info, analyze changes against architecture pattern rules, draft comments, approve/request changes via `gh` CLI as documented in `docs/PR_REVIEW.md`.
