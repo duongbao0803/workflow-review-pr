@@ -6,8 +6,10 @@ import { LeakEventListenerScreen } from './screens/LeakEventListenerScreen';
 import { LeakGlobalArrayScreen } from './screens/LeakGlobalArrayScreen';
 import { LeakDOMScreen } from './screens/LeakDOMScreen';
 import { LeakObserverScreen } from './screens/LeakObserverScreen';
-import ViolatePatternScreen from './ViolatePatternScreen';
-import UserProfileScreen from './UserProfileScreen';
+import { ViolatePatternScreen } from './screens/ViolatePatternScreen';
+import { UserProfileScreen } from './screens/UserProfileScreen';
+import { BadPatternScreen } from './screens/BadPatternScreen';
+import { NewFeatureScreen } from './screens/NewFeatureScreen';
 import './App.css';
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
         return <ViolatePatternScreen />;
       case 'user-profile':
         return <UserProfileScreen />;
+      case 'bad-pattern':
+        return <BadPatternScreen />;
+      case 'new-feature':
+        return <NewFeatureScreen />;
       case 'home':
       default:
         return <HomeScreen />;
@@ -73,10 +79,7 @@ function App() {
         >
           ⚠️ Leak: Global Array{' '}
         </button>
-        <button
-          style={{ backgroundColor: '#dc3545' }}
-          onClick={() => setActiveScreen('leak-dom')}
-        >
+        <button style={{ backgroundColor: '#dc3545' }} onClick={() => setActiveScreen('leak-dom')}>
           ⚠️ Leak: Detached DOM
         </button>
         <button
@@ -86,16 +89,28 @@ function App() {
           ⚠️ Leak: Observer API
         </button>
         <button
-          style={{ backgroundColor: '#ff9800', color: 'black', fontWeight: 'bold' }}
+          style={{ backgroundColor: '#28a745', color: 'white', fontWeight: 'bold' }}
           onClick={() => setActiveScreen('violate-pattern')}
         >
-          ❌ Sai Pattern
+          ✅ Đã fix Pattern 1
         </button>
         <button
-          style={{ backgroundColor: '#ff9800', color: 'black', fontWeight: 'bold' }}
+          style={{ backgroundColor: '#28a745', color: 'white', fontWeight: 'bold' }}
           onClick={() => setActiveScreen('user-profile')}
         >
-          ❌ Sai Pattern 2 (User Profile)
+          ✅ Đã fix Pattern 2
+        </button>
+        <button
+          style={{ backgroundColor: '#28a745', color: 'white', fontWeight: 'bold' }}
+          onClick={() => setActiveScreen('bad-pattern')}
+        >
+          ✅ Đã fix Pattern 3
+        </button>
+        <button
+          style={{ backgroundColor: '#17a2b8', color: 'white', fontWeight: 'bold' }}
+          onClick={() => setActiveScreen('new-feature')}
+        >
+          ✨ New Feature
         </button>
       </nav>
 
