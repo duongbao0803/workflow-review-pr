@@ -75,20 +75,23 @@ Before and during PR review:
 
 ## 4. Ask for User Confirmation & Comment Preference
 
-1. Present your assessment, justification, and recommendations to the user, and ask how they want to proceed in a single step (so the user doesn't have to answer multiple times).
-2. **STOP** your response here and wait for the user to reply with a number.
+1. Present your assessment, justification, and recommendations to the user.
+2. **IMMEDIATELY after presenting your assessment**, call the `AskUserQuestion` tool with the following 5 options. Do NOT write them as plaintext — use the tool so the user gets an interactive selectbox UI.
 
-Based on my review of PR #<PR-number>, I recommend [approving/requesting changes]. Here's my justification:
+```
+AskUserQuestion(
+  question: "Bạn muốn tiếp tục như thế nào?",
+  options: [
+    "Approve và soạn comment cho tôi",
+    "Approve thôi (tôi tự handle comment)",
+    "Request changes và soạn comment cho tôi",
+    "Request changes thôi (tôi tự handle comment)",
+    "Thảo luận thêm"
+  ]
+)
+```
 
-[Detailed justification with key points about the PR quality, implementation, and any concerns]
-
-How would you like to proceed? Please reply with a number:
-
-1. Approve and draft a comment for me
-2. Approve only (I'll handle the comment)
-3. Request changes and draft comment for me
-4. Request changes only (I'll handle the comment)
-5. Discuss further
+3. **STOP** and wait for the user to select an option before proceeding to Step 5.
 
 ## 5. Draft Comment & Execute Decision
 
@@ -202,13 +205,7 @@ Based on my review of PR #3627, I recommend approving this PR. Here's my justifi
 5. The implementation is clean and follows the project's coding standards
 6. The PR includes helpful screenshots demonstrating the fix
 
-How would you like to proceed? Please reply with a number:
-
-1. Approve and draft a comment for me
-2. Approve only (I'll handle the comment)
-3. Request changes and draft comment for me
-4. Request changes only (I'll handle the comment)
-5. Discuss further
+Then call AskUserQuestion tool with 5 options (as described in Step 4 above) to get an interactive selectbox.
 
 ## Step 5: Draft Comment & Execute Decision
 
