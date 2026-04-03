@@ -10,6 +10,8 @@ export function LeakGlobalArrayScreen() {
         `LeakGlobalArrayScreen: Đã thêm dữ liệu rác. Kích thước mảng: ${leakedArray.length}`,
       );
     }, 500);
+
+    return () => clearInterval(timer);
   }, []);
 
   return (

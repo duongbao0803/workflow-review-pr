@@ -5,6 +5,7 @@ export function LeakObserverScreen() {
 
   useEffect(() => {
     // Memory Leak: Tạo ResizeObserver trên element nhưng cố tình không thực hiện cleanup
+    // Fixed: Now performing cleanup
     const observer = new ResizeObserver(entries => {
       for (const entry of entries) {
         console.log(
@@ -16,6 +17,8 @@ export function LeakObserverScreen() {
     if (elementRef.current) {
       observer.observe(elementRef.current);
     }
+
+    return () => observer.disconnect();
   }, []);
 
   return (

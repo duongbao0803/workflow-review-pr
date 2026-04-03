@@ -18,6 +18,8 @@ export function LeakDOMScreen() {
 
       console.log('LeakDOMScreen: Đã tạo và giữ tham chiếu tới DOM node mới.');
     }, 500);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (

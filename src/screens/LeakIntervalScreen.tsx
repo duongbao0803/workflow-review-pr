@@ -9,6 +9,8 @@ export function LeakIntervalScreen() {
       setCount(c => c + 1);
       console.log('LeakIntervalScreen: Interval đang chạy (đã được fix).');
     }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
