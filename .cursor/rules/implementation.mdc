@@ -1,15 +1,15 @@
 ---
-description: Implementation Tasks workflow. Triggers when user asks to implement, build, create, add feature, code, or refactor.
+description: Implementation Tasks workflow. Triggers on implement, build, create, add feature, code, refactor, fix bug, sửa bug, tạo màn hình, thêm tính năng, viết code, tạo component.
 globs: *
 alwaysApply: true
 ---
-# Implementation Tasks
+
+# Implementation
 
 ## Mandatory First Step
-Before performing ANY task, you MUST read the mandatory documentation. Do NOT skip this step. Do not guess conventions.
 
-**MUST READ:**
-- `docs/PATTERN.md`
+Trước khi tạo hoặc sửa bất kỳ file nào, đọc:
 
-## Workflow
-Follow the architecture pattern, directory structure, and coding conventions defined in `docs/PATTERN.md` when proposing new files or editing existing ones.
+1. `docs/PATTERN.md` — **đây là source of truth duy nhất cho kiến trúc, directory structure & coding conventions**
+
+> Toàn bộ quy tắc (directory layout, single responsibility, export pattern, self-review checklist) đều nằm trong `docs/PATTERN.md`. Đọc và làm theo đúng như vậy. Không được tự ý làm khác.

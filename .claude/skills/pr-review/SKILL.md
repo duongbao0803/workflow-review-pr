@@ -1,10 +1,18 @@
 ---
-description: PR review workflow. Triggers on review PR, PR #N, review pull request, check PR, review this PR, giúp review PR, review PR số, xem PR, kiểm tra PR, đọc PR.
-globs: *
-alwaysApply: true
+name: pr-review
+description: >
+  Thực hiện full code review cho một GitHub Pull Request.
+  Tự động kích hoạt khi user nhắc đến: "review PR", "PR #N",
+  "review pull request", "check PR", "review this PR",
+  "giúp review PR", "review PR số", "xem PR", "kiểm tra PR", "đọc PR".
+allowed-tools:
+  - Bash
+  - Read
+  - Glob
+  - Grep
 ---
 
-# PR Review
+# Skill: PR Review
 
 ## Mandatory First Step
 

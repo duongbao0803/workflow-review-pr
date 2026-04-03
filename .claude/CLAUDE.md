@@ -1,15 +1,28 @@
 # Claude Code Instructions
 
+> **Note:** Hooks are configured in `.claude/settings.json`.
+> They automatically block `gh pr` commands and file edits until you acknowledge the rules.
+
 ## Mandatory First Step
-Before performing ANY task in this repository, you MUST identify the task type below and read the mandatory documentation. Do NOT skip this step. Do not guess conventions.
 
-## 1. PR Review Tasks
-**Keywords:** "review PR", "PR #N", "review pull request", "check PR"
-- **MUST READ:** `docs/PR_REVIEW.md`
-- **MUST READ:** `docs/PATTERN.md`
-- **Workflow:** Gather PR info, analyze changes against architecture pattern rules, draft comments, approve/request changes via `gh` CLI as documented in `docs/PR_REVIEW.md`.
+Before performing ANY task, identify the task type and load the corresponding skill below. **Do NOT skip. Do not guess conventions.**
 
-## 2. Implementation Tasks
-**Keywords:** "implement", "build", "create", "add feature", "code", "refactor", "fix bug"
-- **MUST READ:** `docs/PATTERN.md`
-- **Workflow:** Follow the architecture pattern, directory structure, and coding conventions defined in `docs/PATTERN.md` when proposing new files or editing existing ones.
+---
+
+## 1. PR Review Tasks → Load skill `pr-review`
+
+**Trigger keywords (EN + VI):**
+`review PR` · `PR #N` · `review pull request` · `check PR` · `review this PR`
+`giúp review PR` · `review PR số` · `xem PR` · `kiểm tra PR` · `đọc PR`
+
+**Action:** Read `.claude/skills/pr-review/SKILL.md` — it contains the full 5-step workflow.
+
+---
+
+## 2. Implementation Tasks → Load skill `implementation`
+
+**Trigger keywords (EN + VI):**
+`implement` · `build` · `create` · `add feature` · `code` · `refactor` · `fix bug`
+`sửa bug` · `tạo màn hình` · `thêm tính năng` · `viết code` · `tạo component`
+
+**Action:** Read `.claude/skills/implementation/SKILL.md` — it contains the full workflow + PATTERN.md conventions.
