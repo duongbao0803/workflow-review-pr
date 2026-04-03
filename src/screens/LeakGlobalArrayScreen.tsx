@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { leakedArray } from '../utils/leakHelpers';
+import { leakedArray, resetLeakedArray } from '../utils/leakHelpers';
 
 export function LeakGlobalArrayScreen() {
   useEffect(() => {
@@ -11,7 +11,12 @@ export function LeakGlobalArrayScreen() {
       );
     }, 500);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      // Fix: Reset global array khi unmount để Garbage Collector thu hồi bộ nhớ
+      resetLeakedArray();
+      console.log('LeakGlobalArrayScreen: Đã dọn dẹp leakedArray → memory released.');
+    };
   }, []);
 
   return (

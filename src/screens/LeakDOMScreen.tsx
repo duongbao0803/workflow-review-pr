@@ -19,7 +19,14 @@ export function LeakDOMScreen() {
       console.log('LeakDOMScreen: Đã tạo và giữ tham chiếu tới DOM node mới.');
     }, 500);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      // Fix: Xóa toàn bộ tham chiếu trong mảng global khi unmount
+      // để Garbage Collector có thể thu hồi các DOM node bị detach
+      detachedNodes.length = 0;
+      setNodesCount(0);
+      console.log('LeakDOMScreen: Đã dọn dẹp detachedNodes → memory released.');
+    };
   }, []);
 
   return (
