@@ -13,7 +13,23 @@ export function ViolatePatternScreen() {
   };
 
   useEffect(() => {
-    loadData();
+    // Fix: Dùng flag để tránh set state sau khi component đã unmount (race condition)
+    let isMounted = true;
+
+    const run = async () => {
+      setLoading(true);
+      const data = await fetchAndProcessUserData();
+      if (isMounted) {
+        setUsers(data);
+        setLoading(false);
+      }
+    };
+
+    run();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
