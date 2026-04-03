@@ -9,13 +9,15 @@ Before and during PR review:
 3. During analysis, use `docs/PATTERN.md` as a required checklist for each changed file.
 4. Then execute the PR review workflow below.
 
+> **LANGUAGE RULE**: You MUST write ALL your responses, step headings, analysis, assessments, and options **in Vietnamese (Tiếng Việt)**. No exceptions.
+
 <detailed_sequence_of_steps>
 
 # GitHub PR Review Process - Detailed Sequence of Steps
 
 **CRITICAL RULE FOR ALL AI AGENTS:**
 
-1. You MUST output the exact heading for each step (e.g., `## Step 1: Gather PR Information`).
+1. You MUST output the exact heading for each step (e.g., `## Step 1: Gather PR Information`) **in Vietnamese**.
 2. You MUST follow the steps **strictly sequentially**. You CAN and SHOULD execute Steps 1, 2, and 3 continuously. Do not pause to wait for the user between these internal steps.
 3. For the step that requires user input (Step 4), you MUST stop your response immediately after presenting the numbered options and WAIT for the user's answer. Do NOT execute the next step until the user replies with their choice.
 
